@@ -106,7 +106,8 @@ class MultiheadAttention(nn.Module):
             q = self.in_proj_q(query)
             k = self.in_proj_k(key)
             v = self.in_proj_v(value)
-        q *= self.scaling
+        #q *= self.scaling
+        q = q * self.scaling
 
         if saved_state is not None:
 

@@ -34,7 +34,8 @@ else:
 
 if c10d_status.is_default:
     import torch.distributed as dist_c10d
-    import torch.distributed.deprecated as dist_no_c10d
+    #import torch.distributed.deprecated as dist_no_c10d
+    import torch.distributed as dist_no_c10d
 elif c10d_status.has_c10d:
     import torch.distributed.c10d as dist_c10d
     import torch.distributed as dist_no_c10d

@@ -3,4 +3,4 @@ numpy
 scipy
 torch
 tqdm
-spacy[cuda]
+spacy[cuda12x]

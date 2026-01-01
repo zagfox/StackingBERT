@@ -5,7 +5,8 @@ import torch
 
 
 def main():
-    ckpt = torch.load(sys.argv[1])
+    #ckpt = torch.load(sys.argv[1])
+    ckpt = torch.load(sys.argv[1], weights_only=False)
 
     lst = []
     for k, v in ckpt['model'].items():

@@ -80,7 +80,7 @@ def load_model_state(filename, model):
 
 def load_bert_state(filename, model, upgrade=True):
     assert os.path.exists(filename), f"File {filename} not found."
-    state = torch.load(filename, map_location=lambda s, l: default_restore_location(s, 'cpu'))
+    state = torch.load(filename, map_location=lambda s, l: default_restore_location(s, 'cpu'), weights_only=False)
     state = _upgrade_state_dict(state)
     if upgrade:
         state['model'] = _upgrade_state_dict_bert(state['model'])
