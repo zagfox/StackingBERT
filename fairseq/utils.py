@@ -64,7 +64,7 @@ def save_state(filename, args, model, criterion, optimizer, lr_scheduler,
 def load_model_state(filename, model):
     if not os.path.exists(filename):
         return None, [], None
-    state = torch.load(filename, map_location=lambda s, l: default_restore_location(s, 'cpu'))
+    state = torch.load(filename, map_location=lambda s, l: default_restore_location(s, 'cpu'), weights_only=False)
     state = _upgrade_state_dict(state)
     model.upgrade_state_dict(state['model'])
 
